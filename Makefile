@@ -46,6 +46,7 @@ src/System_$(UC).o: $(CMSIS_SRC)
 	$(CC) -c $(CFLAGS) $< -o $@
 
 $(TARGET).axf: $(OBJS)
+	mkdir -p bin/
 	$(CC) -T $(LINKER_FILE) $(LFLAGS) $(CFLAGS) -o bin/$(TARGET).axf $(OBJS) $(LIBS)
 
 $(TARGET): $(TARGET).axf
