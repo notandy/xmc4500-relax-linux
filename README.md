@@ -19,7 +19,8 @@ You need to rename a file inside the CMSIS directory, because else gcc is not
 able find the System_XMD4500.c file. This seems to be a UNIX-only problem since
 windows-gcc is case-insensitive regarding filenames.
 
-        mv CMSIS/Infineon/XMC4500_series/Source/system_XMD4500.c CMSIS/Infineon/XMC4500_series/Source/System_XMD4500.c
+    cd CMSIS/Infineon/XMC4500_series/Source
+    mv system_XMC4500.c System_XMC4500.c
 
 Usage
 -------------------------
@@ -27,7 +28,7 @@ Usage
 2. Type _make_
 3. Connect your evaluation board to usb, start the gdb-server with:
 
-       JLinkGDBServer -Device XMC4500-1024 -if SWD
+    JLinkGDBServer -Device XMC4500-1024 -if SWD
 
 4. Type _make install_
 
